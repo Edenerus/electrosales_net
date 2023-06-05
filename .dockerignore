@@ -1,0 +1,11 @@
+#ignore all
+**
+
+#excepts
+!electrosales_net/**
+!users/**
+!network/**
+!manage.py
+!poetry.lock
+!pyproject.toml
+!entrypoint.sh
