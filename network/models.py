@@ -61,7 +61,7 @@ class Provider(models.Model):
             В обоих случаях при неполадках выпадает сообщение"""
         if self.type == 0 and self.provider:
             raise ValidationError(f"{self} является заводом и не может иметь поставщиков")
-        if self.provider.level == 2:
+        if self.provider and self.provider.level == 2:
             raise ValidationError(f"{self.provider} не может быть поставщиком для {self}, т.к его уровень сети 2 ")
 
     def __str__(self):

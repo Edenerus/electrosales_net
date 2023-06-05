@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
+    'drf_spectacular',
 
     'network',
     'users',
@@ -135,3 +137,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        ],
+    "PAGE_SIZE": 10,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "ElectroSale API",
+    "DESCRIPTION": "Small API for electronic sales network app",
+    "VERSION": "1.0.0"
+}

@@ -13,7 +13,6 @@ class User(AbstractUser):
                                 verbose_name='Компания', related_name='staff')
 
     REQUIRED_FIELDS = ['email',
-                       'username'
                        'first_name',
                        'last_name',
                        'password']
